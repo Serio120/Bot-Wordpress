@@ -23,8 +23,10 @@ print(f"La carpeta detectada es: {carpeta_word}")
 # ---------------- CONFIGURACIÓN NUICON ----------------
 url_login = 'https://nuicon.es/l0gin/'
 url_nuevo_post = 'https://nuicon.es/wp-admin/post-new.php'
-usuario_wp = 'nuicon'
-password_wp = 'S0rv!iHHSy*vIKYOvZZdK(1x'
+usuario_wp = os.getenv("NUICON_WP_USERNAME")
+password_wp = os.getenv("NUICON_WP_PASSWORD")
+if not usuario_wp or not password_wp:
+    raise RuntimeError("Define NUICON_WP_USERNAME and NUICON_WP_PASSWORD in the environment.")
 # carpeta_word = r"C:\Users\Pink Stone\Desktop\Virtual-Actual-01"
 
 options = Options()
