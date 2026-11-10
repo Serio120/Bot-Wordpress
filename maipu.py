@@ -23,8 +23,10 @@ print(f"La carpeta detectada es: {carpeta_word}")
 # ---------------- CONFIGURACIÓN ----------------
 url_login = 'https://grupomaipu.com/wp-login.php'
 url_nuevo_post = 'https://grupomaipu.com/wp-admin/post-new.php'
-usuario_wp = 'GrupoMaipu2024'
-password_wp = '1eH4.2NI>/&;'
+usuario_wp = os.getenv("MAIPU_WP_USERNAME")
+password_wp = os.getenv("MAIPU_WP_PASSWORD")
+if not usuario_wp or not password_wp:
+    raise RuntimeError("Define MAIPU_WP_USERNAME and MAIPU_WP_PASSWORD in the environment.")
 # carpeta_word = r"C:\Users\Pink Stone\Desktop\Virtual-Actual-01"
 
 options = Options()

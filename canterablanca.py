@@ -23,8 +23,10 @@ print(f"La carpeta detectada es: {carpeta_word}")
 # ---------------- CONFIGURACIÓN CANTERA BLANCA ----------------
 url_login = 'https://canterablanca.com/wp-login.php'
 url_nuevo_post = 'https://canterablanca.com/wp-admin/post-new.php'
-usuario_wp = 'CanteraAdmin2024'
-password_wp = 'G1s$FHwi1&'
+usuario_wp = os.getenv("CANTERABLANCA_WP_USERNAME")
+password_wp = os.getenv("CANTERABLANCA_WP_PASSWORD")
+if not usuario_wp or not password_wp:
+    raise RuntimeError("Define CANTERABLANCA_WP_USERNAME and CANTERABLANCA_WP_PASSWORD in the environment.")
 # carpeta_word = r"C:\Users\Pink Stone\Desktop\Virtual-Actual-01"
 
 options = Options()

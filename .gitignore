@@ -1,0 +1,14 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+usuarios-y-pwd.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local logs
+*.log
